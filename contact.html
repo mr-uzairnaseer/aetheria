@@ -131,20 +131,23 @@
       <div id="trip-modal" class="modal">
         <div class="modal__content">
           <span class="modal__close">&times;</span>
-          <h2>Plan Your Journey</h2>
-          <form class="modal__form" id="trip-form">
-            <input type="text" placeholder="Full Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <select required>
-              <option value="" disabled selected>Preferred Destination</option>
-              <option value="forest">Forest Adventure</option>
-              <option value="mountain">Mountain Climbing</option>
-              <option value="beach">Beach Vacation</option>
-              <option value="city">City Tour</option>
-            </select>
-            <input type="number" placeholder="Number of Travelers" min="1" required />
-            <button type="submit" class="btn">Start Planning</button>
-          </form>
+          <div class="modal__image"></div>
+          <div class="modal__form__container">
+            <h2>Plan Your Journey</h2>
+            <form class="modal__form" id="trip-form">
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <select required>
+                <option value="" disabled selected>Preferred Destination</option>
+                <option value="forest">Forest Adventure</option>
+                <option value="mountain">Mountain Climbing</option>
+                <option value="beach">Beach Vacation</option>
+                <option value="city">City Tour</option>
+              </select>
+              <input type="number" placeholder="Number of Travelers" min="1" required />
+              <button type="submit" class="btn">Start Planning</button>
+            </form>
+          </div>
         </div>
       </div>
   
