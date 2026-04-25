@@ -79,3 +79,56 @@ bannerImages.forEach((item) => {
   duplicateNode.setAttribute("aria-hidden", true);
   banner.appendChild(duplicateNode);
 });
+
+// Modal & Toast Logic
+const modal = document.getElementById("trip-modal");
+const planBtns = document.querySelectorAll(".btn-plan");
+const closeBtn = document.querySelector(".modal__close");
+const tripForm = document.getElementById("trip-form");
+const contactForm = document.querySelector(".contact__form form");
+const toast = document.getElementById("success-toast");
+const toastMsg = document.getElementById("toast-msg");
+
+function showToast(message) {
+  if (!toast) return;
+  toastMsg.innerText = message;
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
+planBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modal.classList.add("show");
+  });
+});
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+}
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
+});
+
+if (tripForm) {
+  tripForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    modal.classList.remove("show");
+    showToast("Trip Plan Submitted! We'll get back to you with an itinerary.");
+    tripForm.reset();
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    showToast("Message Sent! Thank you for reaching out to Aetheria.");
+    contactForm.reset();
+  });
+}

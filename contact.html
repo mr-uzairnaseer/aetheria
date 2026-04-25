@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Contact Us | Aetheria</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li>
+          <button class="btn btn-plan">
+            Plan a Trip
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="page__header">
+      <h1>Let's Connect</h1>
+      <p>Start Your Extraordinary Journey Today</p>
+    </header>
+
+    <section class="section__container">
+        <div class="contact__container">
+            <div class="contact__form">
+                <h3 class="section__subheader" style="text-align: left;">Inquiry Form</h3>
+                <h2 class="section__header" style="text-align: left; margin-bottom: 2rem;">How Can We Help?</h2>
+                <form id="contact-page-form" onsubmit="event.preventDefault(); showToast('Message Sent! Our experts will be in touch shortly.'); this.reset();">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email Address" required />
+                    <input type="text" placeholder="Subject / Destination of Interest" required />
+                    <textarea placeholder="Tell us more about your dream trip..." rows="6" required></textarea>
+                    <button type="submit" class="btn">Send Message <span><i class="ri-send-plane-line"></i></span></button>
+                </form>
+            </div>
+            <div class="contact__info">
+                <h3>Our Studios</h3>
+                <div class="contact__item">
+                    <i class="ri-map-pin-2-line"></i>
+                    <div>
+                        <p><strong>London Studio</strong></p>
+                        <p>42 Mayfair St, London, UK</p>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <i class="ri-map-pin-2-line"></i>
+                    <div>
+                        <p><strong>New York Hub</strong></p>
+                        <p>150 Hudson St, NYC, USA</p>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <i class="ri-phone-line"></i>
+                    <div>
+                        <p><strong>General Inquiries</strong></p>
+                        <p>+44 20 7946 0958</p>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <i class="ri-mail-line"></i>
+                    <div>
+                        <p><strong>Email Us</strong></p>
+                        <p>concierge@aetheria.travel</p>
+                    </div>
+                </div>
+                <div class="footer__socials" style="margin-top: 2rem; justify-content: flex-start;">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__container extra-section">
+        <h3 class="section__subheader">Global Presence</h3>
+        <h2 class="section__header" style="margin-bottom: 2rem;">Visit Us Around the World</h2>
+        <div style="height: 450px; border-radius: 1rem; overflow: hidden; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #888;">
+            <p>[Interactive Map Showing Office Locations]</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="section__container footer__container">
+          <div class="footer__logo">
+            <img src="assets/logo.png" alt="logo" />
+          </div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+          </ul>
+          <ul class="footer__socials">
+            <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+            <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__bar">
+          Copyright © 2025 Aetheria. All rights reserved.
+        </div>
+      </footer>
+
+      <div id="trip-modal" class="modal">
+        <div class="modal__content">
+          <span class="modal__close">&times;</span>
+          <h2>Plan Your Journey</h2>
+          <form class="modal__form" id="trip-form">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <select required>
+              <option value="" disabled selected>Preferred Destination</option>
+              <option value="forest">Forest Adventure</option>
+              <option value="mountain">Mountain Climbing</option>
+              <option value="beach">Beach Vacation</option>
+              <option value="city">City Tour</option>
+            </select>
+            <input type="number" placeholder="Number of Travelers" min="1" required />
+            <button type="submit" class="btn">Start Planning</button>
+          </form>
+        </div>
+      </div>
+  
+      <div id="success-toast" class="success-toast">
+        <i class="ri-checkbox-circle-fill"></i>
+        <span id="toast-msg">Success!</span>
+      </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

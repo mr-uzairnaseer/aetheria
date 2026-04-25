@@ -27,12 +27,11 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#tour">Tours</a></li>
-        <li><a href="#contact">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="contact.html">Contacts</a></li>
         <li>
-          <button class="btn">
+          <button class="btn btn-plan">
             Plan a Trip
             <span><i class="ri-arrow-right-long-line"></i></span>
           </button>
@@ -330,10 +329,10 @@
           <img src="assets/logo.png" alt="logo" />
         </div>
         <ul class="footer__links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#tour">Tours</a></li>
-          <li><a href="#contact">Contacts</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="tours.html">Tours</a></li>
+          <li><a href="contact.html">Contacts</a></li>
         </ul>
         <ul class="footer__socials">
           <li>
@@ -354,6 +353,31 @@
         Copyright © 2025 Aetheria. All rights reserved.
       </div>
     </footer>
+
+    <div id="trip-modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <h2>Plan Your Journey</h2>
+        <form class="modal__form" id="trip-form">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <select required>
+            <option value="" disabled selected>Preferred Destination</option>
+            <option value="forest">Forest Adventure</option>
+            <option value="mountain">Mountain Climbing</option>
+            <option value="beach">Beach Vacation</option>
+            <option value="city">City Tour</option>
+          </select>
+          <input type="number" placeholder="Number of Travelers" min="1" required />
+          <button type="submit" class="btn">Start Planning</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="success-toast" class="success-toast">
+      <i class="ri-checkbox-circle-fill"></i>
+      <span id="toast-msg">Success!</span>
+    </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
